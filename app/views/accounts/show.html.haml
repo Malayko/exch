@@ -1,0 +1,14 @@
+.creation-link
+  = link_to("#{image_tag("add.gif", :alt => t(".add_funds"), :title => t(".add_funds"))} #{t(".add_funds")}".html_safe, new_account_deposit_path)
+
+%h1= t :account_balance_title
+
+%table#account-balances.default
+  %tr
+    %th
+    %th= t :currency
+    %th= t :balance  
+
+  - @balances.keys.sort.each do |code|
+    - unless %w{UNCONFIRMED_BTC ADDRESS}.include?(code) 
+      = render :partial => 'accounts/balance_row', :locals => { :code => code.downcase, :balance => @balances[code], :unconfirmed_btc => @balances['UNCONFIRMED_BTC'] }

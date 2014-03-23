@@ -1,0 +1,204 @@
+en:
+  activerecord:
+    attributes:
+      invoice:
+        reference: Reference
+        user: Payee
+        payment_address: Payment address
+        amount: Amount
+        callback_url: Callback URL
+        state: State
+        paid_at: Paid at
+        merchant_reference: Merchant ref.
+        merchant_memo: Comment
+        authentication_token: Authentication token
+        item_url: Related order URL
+      liberty_reserve_transfer:
+        lr_account_id: Liberty Reserve account ID
+      trade_order:
+        amount: Amount
+        dark_pool: Dark pool
+        ppc: Price
+        category: Type
+        type: Matching
+        currency: Currency
+        total: Total
+        created_at: Created at
+        updated_at: Updated at
+      transfer:
+        id: ID
+        created_at: Created at
+        user: User
+        amount: Amount
+        amount_tosend: Amount to send to our account
+        amount_afterfee: Amount received after fees
+        address: Address
+        currency: Currency
+        bt_tx_confirmations: Confirmations
+        bt_tx_from: Senders Bitcoin address
+        bt_tx_id: Bitcoin transaction
+        email: E-mail address
+        lr_merchant_fee: Liberty Reserve merchant fee
+        lr_transferred_amount: Liberty Reserve transferred amount
+        lr_transaction_id: Liberty Reserve ref.
+        lr_account_id: Liberty Reserve account
+        px_tx_id: Pecunix ref.
+        px_fee: Pecunix fee
+        px_payer: Pecunix payer
+        state: Status
+      user:
+        id: ID
+        email: E-mail address
+        password: Password
+        recaptcha_response_field: Are you human?
+        name: Account ID
+        admin: Administrator
+        authentication_token: Authentication token
+        confirmation_sent_at: Confirmation e-mail sent at
+        confirmation_token: Confirmation token
+        current_sign_in_at: Current sign-in at
+        current_sign_in_ip: Current sign-in IP
+        encrypted_password: Encrypted password
+        failed_attempts: Failed authentication attempts
+        last_address: Last Bitcoin address
+        last_sign_in_at: Last sign-in at
+        last_sign_in_ip: Last sign-in IP
+        locked_at: Locked at
+        password_salt: Password salt
+        remember_created_at: Remember created at
+        remeber_token: Remember token
+        reset_password_token: Password reset token
+        salt: Salt
+        secret_token: Secret token
+        time_zone: Time-zone
+        unlock_token: Unlock token
+        purchase_trades: Purchase trades
+        sale_trades: Sale trades
+        trade_orders: Trade orders
+        transfers: Transfers
+        current_password: Current password
+        new_password: New password
+        merchant: Merchant API
+        require_ga_otp: Google Authenticator
+        require_yk_otp: Yubikey
+        ga_otp: Google Auth. OTP
+        yk_otp: Yubikey OTP
+        bank_account_id: Bank account
+        full_name: Your name
+        address: Your address
+        notify_on_trade: Successful trade
+      trade:
+        type: Type
+        amount: Amount
+        price: Price
+        total: Total
+        created_at: Date
+      announcement:
+        content: Message
+        active: Active
+      yubikey:
+        otp: Yubikey OTP
+        key_id: Key ID
+        active: Active
+        created_at: Created at
+      static_page:
+        title: Title
+        locale: Locale
+        contents: Contents
+        created_at: Created at
+        updated_at: Last updated at
+      bank_account:
+        bic: BIC
+        iban: IBAN
+        bank_name: Bank name
+        account_holder: Full name
+        ag: Agency
+        cc: Account
+        cnpj: CPF/CNPJ
+        cpf: CPF
+        created_at: Registered on
+        state: Status
+      currency:
+        code: Code
+        created_at: Creation
+        updated_at: Update
+      ticket:
+        id: ID
+        title: Title
+        state: Status
+        description: Description
+        created_at: Opened at
+        updated_at: Updated at
+                    
+    models:
+      invoice:
+        one: Invoice
+        other: Invoices
+      user:
+        one: User
+        other: Users
+      trade_order:
+        one: Trade order
+        other: Trade orders
+      account_operation:
+        one: Operation
+        other: Operations        
+      transfer:
+        one: Transfer
+        other: Transfers
+      trade:
+        one: Trade
+        other: Trades
+      announcement:
+        one: Announcement
+        other: Announcements        
+      yubikey:
+        one: Yubikey
+        other: Yubikeys
+      static_page:
+        one: Static page
+        other: Static pages
+      bank_account:
+        one: Bank account
+        other: Bank accounts
+      ticket:
+        one: Support ticket
+        other: Support tickets
+      currency:
+        one: Currency
+        other: Currencies
+        
+    extra:
+      invoice:
+        state_translations:
+          pending: Pending payment
+          processing: Processing payment
+          paid: Paid
+        state_tooltips:
+          pending: No payment has been received yet
+          processing: A payment has been detected and awaits confirmation from the Bitcoin network
+          paid: Payment has been confirmed        
+      trade:
+        types:
+          buy: Buy
+          sell: Sell        
+      bank_account:
+        states:
+          unverified: Unverified
+          verified: Verified        
+      currency:
+        codes:
+          eur: Euro
+          usd: US Dollar
+          cad: Canadian Dollar
+          inr: Indian Rupee
+          lrusd: Liberty Reserve Dollar
+          lreur: Liberty Reserve Euro
+          pgau: Pecunix Gold
+          btc: Bitcoin   
+          brl: Brazilian Real  
+      ticket:
+        states:
+          pending: Pending
+          solved: Solved
+          closed: Closed

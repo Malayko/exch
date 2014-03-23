@@ -1,0 +1,72 @@
+
+%h1= t(".bitcoins.title")
+%div{:style => "float:left; width: 50%" }
+  %div{:style => "line-height: 30pt;" }
+    %p
+      %strong= t(".bitcoins.address") + ":"
+      = link_to @current_user.bitcoin_address, "bitcoin:#{@current_user.bitcoin_address}"
+    %p
+      %strong= t(".bitcoins.conf_rqd") + ":"
+      = Transfer::MIN_BTC_CONFIRMATIONS
+      = t(".bitcoins.conf_rqd_unit")
+    %p
+      %strong= t(".bitcoins.conf_time") + ":"
+      = Transfer::MIN_BTC_CONFIRMATIONS * 10
+      = t(".bitcoins.conf_time_unit")
+  %p
+    = t(".bitcoins.add_info_html", :tx_address => "http://blockchain.info/address/#{@current_user.bitcoin_address}")
+
+%div{:style => "float:left" }
+  = image_tag(qrcode_image_path(current_user.bitcoin_address), :size => "120x120")
+%div{:style => "clear:both;" }
+%h1= t(".deposit_eur_title")
+
+%p= t(".deposit_form")
+
+%br
+= form_for @deposit, :as => :deposit, :url => account_deposits_path do |f|
+  = errors_for(@deposit, :translated_message => t(".error"), :include_nested => :bank_account)
+  
+  .form-field
+    = f.label :currency
+    = f.select :currency, options_from_collection_for_select(@currencies_deposit, 'code', I18n.locale, @deposit.currency)
+    -
+
+  .form-field
+    = f.label :amount
+    = f.text_field :amount, :value => (@deposit.amount)? "100" : @deposit.amount, :autocomplete => "off"
+  
+  .form-field
+    = f.submit :value => t(".submit"), :class => "submit"
+%br
+
+- if @pending_deposits.count > 0
+  %h1= t(".deposit_pendings")
+  
+  %table{:class=>"default"}
+    %thead
+      %tr
+        %th=t("activerecord.attributes.transfer.id")
+        %th=t("activerecord.attributes.transfer.created_at")
+        %th=t("activerecord.attributes.transfer.amount_afterfee")
+        %th=t("activerecord.attributes.transfer.amount_tosend")
+        %th=t("activerecord.attributes.transfer.currency")
+        %th=t("activerecord.attributes.transfer.fast_deposit")
+        %th.auto-sized
+    %tbody
+      - @pending_deposits.each do |d|
+        %tr{ :class => cycle('even', 'odd') }
+          %td.amount=link_to d.id, account_deposit_path(d.id)
+          %td=d.created_at
+          %td.amount=number_to_currency(d.deposit_after_fee, unit: "", separator: ".", delimiter: ",", precision: 3)
+          %td.amount=number_to_currency(d.deposit_before_fee, unit: "", separator: ".", delimiter: ",", precision: 3)
+          %td.auto-sized=currency_icon_for(d.currency)
+          %td.auto-sized
+            - if d.attachment? 
+              = image_tag "processed.png"
+          %td.auto-sized=tf_delete_link_for(d)
+      
+
+  
+
+

@@ -1,0 +1,31 @@
+%div{:style => "padding: 5px 5px 5px 5px;"}
+  = t("accounts.deposit.deposit_eur_body_html", :account_id => @user.name)
+%div#bank-info{:style => "white-space: normal;"}
+  %table
+    %tr
+      %th= t("accounts.deposit.comment")
+      %td= @user.name
+    %tr
+      %th= t("accounts.deposit.account_holder")
+      %td.account-holder= @account_holder
+    %tr
+      %th
+      %td.account-holder-address= @account_holder_address
+    %tr
+      %td{ :colspan => 2 } &nbsp;
+    %tr
+      %th= t("accounts.deposit.ag")
+      %td= @ag
+    %tr
+      %th= t("accounts.deposit.cc")
+      %td= @cc
+    %tr
+      %th= t("accounts.deposit.cnpj")
+      %td= @cnpj
+    %tr
+      %th= t("accounts.deposit.bank")
+      %td.bank= @bank
+    %tr
+      %th
+      %td.bank-address= @bank_address
+

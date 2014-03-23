@@ -1,0 +1,194 @@
+# US English translations for Ruby on Rails
+#
+# Use this as the base for the locale file of your language.
+
+pt:
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Doming, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order:
+      - :ano
+      - :mês
+      - :dia
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      picker: "%a, %d %b %Y %H:%M:%S"
+    am: "am"
+    pm: "pm"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: ", e "
+
+    select:
+      prompt: "Por favor selecione"
+
+  number:
+    format:
+      separator: "."
+      delimiter: ","
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+
+    currency:
+      format:
+        format: "%u %n"
+        unit: "$"
+        separator: "."
+        delimiter: ","
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+
+    percentage:
+      format:
+        delimiter: ""
+
+    precision:
+      format:
+        delimiter: ""
+
+    human:
+      format:
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: Mil
+          million: Milhão
+          billion: Bilhão
+          trillion: Trilhão
+          quadrillion: Quatrilhão
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "meio minuto"
+      less_than_x_seconds:
+        one:   "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      x_seconds:
+        one:   "1 segundo"
+        other: "%{count} segundos"
+      less_than_x_minutes:
+        one:   "menos de um minuto"
+        other: "menos de %{count} minutos"
+      x_minutes:
+        one:   "1 minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one:   "em 1 hora"
+        other: "em %{count} horas"
+      x_days:
+        one:   "1 dia"
+        other: "%{count} dias"
+      about_x_months:
+        one:   "em 1 mês"
+        other: "em %{count} meses"
+      x_months:
+        one:   "1 mês"
+        other: "%{count} meses"
+      about_x_years:
+        one:   "em 1 ano"
+        other: "em %{count} ano"
+      over_x_years:
+        one:   "mais de 1 ano"
+        other: "mais de %{count} anos"
+      almost_x_years:
+        one:   "quase 1 ano"
+        other: "quase %{count} anos"
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundos"
+
+  helpers:
+    select:
+      prompt: "Por favor selecione"
+
+    submit:
+      create: 'Enviar Pedido'
+      update: 'Atualizar %{model}'
+      submit: 'Gravar %{model}'
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    messages: &errors_messages
+      inclusion: "não está incluído na lista"
+      exclusion: "é reservado"
+      invalid: "é inválido"
+      confirmation: "não coincide com a confirmação"
+      accepted: "precisa ser aceito"
+      empty: "não pode ser vazio"
+      blank: "não pode ficar em branco"
+      too_long: "é muito longo (o máximo é %{count} letras)"
+      too_short: "é muito curto (o mínimo é %{count} letras)"
+      wrong_length: "está no tamanho errado (precisa ter %{count} letras)"
+      not_a_number: "não é um número"
+      not_an_integer: "[recisa ser um interiro"
+      greater_than: "precisa ser maior que %{count}"
+      greater_than_or_equal_to: "precisa ser maior ou igual a %{count}"
+      equal_to: "precisa ser igual a %{count}"
+      less_than: "precisa ser menor que %{count}"
+      less_than_or_equal_to: "precisa ser lenor ou igual a %{count}"
+      odd: "must be odd"
+      even: "must be even"
+      invalid_otp: OTP é inválido
+      debit_not_equal_to_credit: Montantes de crédito e débito não são iguais para operações de conta em %{currency}
+      should_be_negative: precisa ser negativo
+      max_amount: não pode ser maior do que o seu limite (%{maximum} %{currency})
+      unknown_country_code: tem código de país errado
+      bad_check_digits: tem dígitos de verificação errado
+      bad_format: tem formato errado
+      bad_length: tem comprimento errado
+      bad_chars: tem caracteres ruins
+      insufficient_privileges: Privilégios insuficientes
+      should_be_blank: tem que ser em branco
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "1 erro impedindo que isso %{model} seja gravado"
+          other:  "%{count} erros impedindo que isso %{model} seja gravado"
+        body: "Existem problemas com os seguintes campos:"
+
+      messages:
+        taken: "já foram tomadas"
+        record_invalid: "Verificação falhou: %{errors}"
+        not_saved: "Account not saved"
+        <<: *errors_messages
+
+      full_messages:
+        format: "%{attribute} %{message}"

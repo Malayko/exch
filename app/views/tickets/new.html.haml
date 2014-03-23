@@ -1,0 +1,16 @@
+%h1= t(".title")
+
+= form_for @ticket, :url => user_tickets_path do |f|
+  = errors_for @ticket, :message => "tickets.new.error"
+
+  .form-field
+    = f.label :title
+    = f.text_field :title
+
+  .form-field
+    = f.label :description
+    = f.text_area :description, :rows => 6
+    .explanation= t(".description_explanation")
+
+  .form-field
+    = f.submit t(".submit"), :class => 'submit'

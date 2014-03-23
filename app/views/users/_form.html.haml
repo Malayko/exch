@@ -1,0 +1,68 @@
+= form_for @user, :as => :user, :url => user_path do |f|
+  = errors_for @user, :message => "error_updating_account"
+
+  - unless @user.new_record?
+    .form-field
+      = f.label :name
+      = f.text_field :name, :disabled => true
+
+  .form-field
+    = f.label :email
+    = f.text_field :email, :disabled => true
+
+  .form-field
+    = f.label :full_name
+    = f.text_field :full_name, :disabled => !@user.full_name.blank?
+
+  .form-field
+    = f.label :address
+    = f.text_area :address, :disabled => !@user.address.blank?, :rows => 4
+
+  .form-field
+    = f.label :time_zone
+    = f.time_zone_select :time_zone, nil, :prompt => "--"
+    .explanation= t(".time_zone_explanation")
+
+  %div{ :style => "clear:both;" }
+
+  - unless @user.new_record?
+    %fieldset
+      %legend= t(".additional_authentication_requirements")
+      .form-field
+        = f.label :require_ga_otp
+        = f.check_box :require_ga_otp, :class => "checkbox"
+        .explanation= link_to t(".ga_otp_config"), ga_otp_configuration_user_path
+
+      .form-field
+        = f.label :require_yk_otp
+        = f.check_box :require_yk_otp, :class => "checkbox"
+        .explanation= link_to t(".yk_otp_config"), user_yubikeys_path
+
+    %fieldset
+      %legend= t("activerecord.models.bank_account.other")
+      %p= t(".registered_bank_accounts", :count => current_user.bank_accounts.count)
+      %p= link_to t(".manage_bank_accounts"), user_bank_accounts_path
+
+    %fieldset
+      %legend= t(".notifications")
+      .form-field
+        = f.label :notify_on_trade
+        = f.check_box :notify_on_trade, :class => "checkbox"
+        .explanation= t(".notify_on_trade_explanation")        
+
+    -#%fieldset
+      -#%legend= t(".api_tools")
+      -#.form-field
+        -#= f.label :merchant
+        -#= f.check_box :merchant, :class => "checkbox"
+        -#.explanation= t(".merchant_explanation")
+
+
+  - if @user.new_record?
+    .recaptcha-field
+      %label{ :for => "recaptcha_response_field" } t(".turing_test")
+      = f.text_field :account, :disabled => true
+      .recaptcha-input= recaptcha_tags :ssl => true
+
+  .form-field
+    = f.submit t(".submit"), :class => 'submit'

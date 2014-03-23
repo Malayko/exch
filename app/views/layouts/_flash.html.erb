@@ -1,0 +1,23 @@
+<% if flash %>
+  <% unless [:notice, :alert, :error].map{ |i| flash[i].blank? }.all? %>
+    <div class="flash">
+      <% unless flash[:error].blank? %>
+        <div class="error">
+          <%= flash[:error].html_safe %>
+        </div>
+      <% end %>
+
+      <% unless flash[:alert].blank? %>
+        <div class="alert">
+          <%= flash[:alert].html_safe %>
+        </div>
+      <% end %>
+
+      <% unless flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice].html_safe %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

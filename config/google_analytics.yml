@@ -1,0 +1,8 @@
+production:
+  account: UA-40452227-1
+
+development:
+  account: UA-40452227-1
+
+test:
+  account: UA-40452227-1

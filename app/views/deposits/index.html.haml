@@ -1,0 +1,26 @@
+%h1= t :account_history_title
+
+%table#history.default
+  %tr
+    %th Date
+    %th= t :currency
+    %th= t :amount
+    %th.auto-sized
+
+  - unless @deposits.blank?
+    - @deposits.each do |deposit|
+      %tr{ :class => cycle('even', 'odd') }
+        %td= l deposit.created_at
+        %td
+          = currency_icon_for(deposit.currency)
+          = deposit.currency
+        %td.amount
+          %span{ :class => color_for(deposit), :title => confirmation_tooltip_for(deposit) }
+            = "#{deposit.amount > 0 ? "+" : "-"} #{number_to_currency deposit.amount.abs, :unit => "", :precision => 8}"
+        %td.auto-sized
+          = deposit_details(deposit)  
+
+  - else
+    = render :partial => "layouts/no_data"
+
+= will_paginate(@deposits)

@@ -1,0 +1,59 @@
+%h1
+  Deposit no.
+  %span.fixed= @deposit.id
+
+%table.default.details
+  %tr
+    %th= t("activerecord.attributes.transfer.id")
+    %td.fixed= @deposit.id
+
+  %tr
+    %th= t("activerecord.attributes.transfer.created_at")
+    %td= l(@deposit.created_at)
+
+  %tr
+    %th= t("activerecord.attributes.transfer.state")
+    %td= transfer_state(@deposit.state, :message => t(".state.#{@deposit.state}").html_safe, :icon => true)
+
+  -#%tr
+    %th= t("activerecord.attributes.transfer.amount_afterfee")
+    %td.fixed= number_to_currency(@deposit_afterfee, :unit => "", :precision => 3)
+    
+  %tr
+    %th= t("activerecord.attributes.transfer.amount_tosend")
+    %td.fixed= number_to_currency(@deposit_beforefee, :unit => "", :precision => 3)
+
+  %tr
+    %th= t("activerecord.attributes.transfer.currency")
+    %td
+      = currency_icon_for(@deposit.currency)
+      = @deposit.currency
+
+  - unless @deposit.comment.blank?
+    %tr
+      %th= t("activerecord.attributes.transfer.comment")
+      %td
+        %pre= @deposit.comment 
+
+- # form for file upload
+%h1=t("accounts.deposit.fast_deposit")
+
+- if @deposit.attachment?
+  #uploadedbox{:style=> "width: 100%;"}
+    #ubimg{:style => "float: left;"}
+      = image_tag "processed.png"
+    #ubtext{:style=> "float: right; width: 97%; font-weight: bold; color: green;"}
+      %p= t("accounts.deposit.fast_deposit_uploaded")
+- else
+  %p= t("accounts.deposit.fast_deposit_notice_html")
+  
+  = form_for @deposit, :as => :deposit, :url => account_deposit_path(@deposit), :html => { :multipart => true } do |f|
+    %p
+      = f.file_field :attachment
+    %p
+      = f.submit :value => t(".submit"), :class => "submit"
+
+#clear{:style => "clear:both;"}
+
+%h1=t("accounts.deposit.deposit_eur_title")
+= render :partial => 'bankinfo'

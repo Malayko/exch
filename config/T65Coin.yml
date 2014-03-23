@@ -1,0 +1,11 @@
+development:
+  username: 365usr
+  password: 365test
+  url: http://localhost:8332/
+  donations: 3N9BbXmLNMDnYijwv5kAcH9KWyuNQBqcz1
+  
+production:
+  username: 365usr
+  password: 365test
+  url: http://localhost:8332/
+  donations: 3N9BbXmLNMDnYijwv5kAcH9KWyuNQBqcz1

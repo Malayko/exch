@@ -1,0 +1,11 @@
+production:
+  public: 6LcYauASAAAAACkJt6axfTdTjEtrgYo2fcqyDHt-
+  private: 6LcYauASAAAAAI41YYlhre_1LEhT7uHrnuD_5I_b
+
+development:
+  public: 6LcYauASAAAAACkJt6axfTdTjEtrgYo2fcqyDHt-
+  private: 6LcYauASAAAAAI41YYlhre_1LEhT7uHrnuD_5I_b
+
+test:
+  public: 6LcYauASAAAAACkJt6axfTdTjEtrgYo2fcqyDHt-
+  private: 6LcYauASAAAAAI41YYlhre_1LEhT7uHrnuD_5I_b

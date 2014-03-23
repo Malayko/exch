@@ -1,0 +1,34 @@
+pt:
+  emails:
+    invoice_payment_notification:
+      subject: Você recebeu um pagamento em Bitcoin
+      body: "Você receveu um pagamento de %{amount} BTC (referência da fatura : %{reference})"
+      
+    withdrawal_processed_notification:
+      subject: O seu pedido de pagamento foi processado
+      body: "O seu pedido de pagamento foi processado, você receberá os seu fundos em breve."
+
+    deposit_processed_notification:
+      subject: Seu depósito foi processado
+      body: "Temos creditado a sua conta com sucesso com o seu depósito recente. Por favor, faça login novamente para verificar a sua conta e começar a negociação."
+
+    deposit_request_notification:
+      subject: Pedido de depósito
+      body: "Recebemos um pedido de um novo depósito na sua conta Bitfication. Por favor, deposite a quantia abaixo para nossa conta bancária."
+      
+    tickets:
+      view_details_of: "Visualizar os detalhes do ticket \"%{title}\""
+      reopen_notification:
+        subject: Seu ticket de suporte foi reaberto
+      create_notification:
+        subject: Um novo ticket de suporte foi aberto
+      close_notification:
+        subject: Seu ticket de suporte foi fechado
+      comment_notification:
+        subject: Seu ticket de suporte recebeu um comentário
+    
+    trade_notification:
+      subject: Uma de suas Ordens de Negociação foi realizada no Bitfication
+      traded: "%{traded_btc} BTC por %{ppc} %{currency} cada Bitcoin, totalizando %{traded_currency} %{currency}"
+      bought: Comprado
+      sold: Vendido

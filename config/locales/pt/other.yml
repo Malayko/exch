@@ -1,0 +1,161 @@
+pt:
+  will_paginate:
+    next: Próximo
+    previous: Anterior
+
+  password_forgotten: Esqueceu a senha?
+  didnt_receive_confirmation: "Não recebeu as instruções de confirmação?"
+  didnt_receive_unlock_instructions: "Não recebeu as instruções para o desbloqueio?"
+  resend_confirmation: Re-enviar as instruções de confirmação
+  submit: Enviar
+  change_password: Mudar a senha
+
+  # Generic
+  no_data: Nenhuma informação for encontrada
+
+  # controllers/informations_controller.rb
+  chart_date_format: %m/%d
+
+  # controllers/sessions_controller.rb
+  sign_in_success: Você entrou com sucesso na sua conta.
+  sign_in_failure: A autenticação falhou, verifique as suas credenciais e a resposta do re-Captcha
+  sign_out_success: Você foi desconectado com sucesso
+
+  # controllers/third_party_callbacks_controller.rb
+  lr_transfer_success: "Adicionado com sucesso %{amount} %{currency} para a sua conta (LR fees : %{fee} %{currency})"
+  lr_transfer_failure: A sua transferência de %{amount} %{currency}, falhou.
+  px_transfer_canceled: A sua transferência do Pecunix foi cancelada
+  px_transfer_success: Você transferiu com sucesso %{amount} PGAU para a sua conta (Pecunix cobrou %{fee} de taxa PGAU)
+
+  # controllers/trade_orders_controller.rb
+  order_saved: A sua Ordem de Negociação foi registrada mas não pode ser preenchida no momento
+  order_filled: A sua Ordem de Negociação foi %{how} preenchida, você %{action} %{traded_btc} Bitcoin(s) por %{amount} %{currency} a %{ppc} %{currency} cada Bitcoin
+  bought: comprou
+  sold: vendeu
+  partially: parcialmente
+  completely: completamente
+  order_deleted: Ordem de Negociação removida com sucesso
+
+  # controllers/transfers_controller.rb
+  successful_transfer: Você transferiu com sucesso %{amount} %{currency}
+
+  # controllers/user_controller.rb
+  account_created: A sua conta foi criada com sucesso
+  account_updated: A sua conta foi atualizada com sucesso
+
+  # helpers/trade_orders_helper.rb
+  order_dark_pool_some: Algumas dessas ordemns não aparecem no order book público
+  order_dark_pool: Esta ordem não aparece no order book público
+
+  # helpers/transfers_helper.rb
+  confirmations_left:
+    one: Faltando 1 confirmação
+    other: Faltando %{count} confirmações
+
+  # mailers/backup_mailer.rb
+  support_from: Suporte Bitfication <%{support_email}>
+  wallet_backup_subject: Backup da Carteira %{date}
+
+  # mailers/user_mailer.rb
+  sign_up_confirmation: Confirmação de Cadastro
+
+  # models/*.rb + lib/validators/*.rb
+  errors:
+    not_yourself: não pode ser você mesmo
+
+    blank: não pode ser em branco
+
+    must_be_greater: precisa ser maior do que %{min} BTC
+    greater_than_balance: é maior do que o seu saldo disponível (%{balance} %{currency})
+    greater_than_capacity: é maior do que a sua capacidade de compra no momento (%{capacity} BTC @ %{ppc} BTC/%{currency})
+    minimum_dark_pool_order: as ordens precisam ter um montante mínimo 3,000 BTC
+
+    invalid: é inválido
+    no_match: não corresponde à sua confirmação
+    answer_incorrect: a resposta está incorreta
+
+    not_your_address: não pode ser um de seus endereços
+    min_amount: não pode ser menor do que %{minimum} %{currency}
+    ppc_minimum: O preço por cada moeda não pode ser menor do que 0.0001 %{currency}
+
+  # views/accounts/show.html
+  account_balance_title: Conta
+  currency: Moeda
+  balance: Saldo
+  balance_unconfirmed: Estes fundos estão aguardando pela confirmação na rede Bitcoi
+
+  # views/backup_mailer/wallet_backup.text
+  encrypted_wallet: Carteira do servidor cifrada em %{date}
+
+  # views/informations/economy.html
+  economy_title: Resumo da Economia Bitcoin
+  how_many_generated: Quantos Bitcoins existem hoje?
+  generated_coins_html: Atualmente existe um total de <strong>%{count}</strong> Bitcoins no mundo.
+
+  # views/informations/faq.html
+  faq_title: Perguntas Mais Frequentes
+
+  # views/informations/welcome.html
+
+  # views/layouts/_footer.html
+  footer_html: 'Sinta-se livre para apoiar este projeto, doando alguns Bitcoins para <span class="bitcoin-address">%{adress}</span>'
+
+  # views/sessions/new.html
+  account_label: ID da Conta
+  account_description: Endereço de E-mail ou ID da Conta
+  password_label: Senha
+  password_description: Esqueceu a senha?
+  sign_in_submit: Entrar
+
+  # views/trade_orders/book.html
+  order_book_title: Selecione uma moeda
+  amount: Montante
+  price: Preço
+  no_buying_orders_found: Nenhuma Ordem de Compra foi encontrada.
+  no_selling_orders_found: Nenhuma Ordem de Venda foi encontrada
+
+  # views/trades/index.html
+  trade_history_title: Histórico de Negociações
+  no_trades_found: Nenhuma negociação foi encontrada
+
+  # views/transfers/index.html
+  account_history_title: Histórico da Conta
+  currency: Moeda
+
+  # views/user_mailer/registration_confirmation.html
+  # views/user_mailer/registration_confirmation.text
+  thanks_for_registering: Obrigado por se cadastrar no Bitfication.
+  your_account_id_is: "O ID da sua Conta é: %{account_id}"
+
+  # views/users/_form.html
+  error_updating_account:
+    one: "Um erro impediu que os detalhes da sua conta fossem atualizados:"
+    other: "%{count} erros imperidam que os detalhes da sua conta fossem atualizados:"
+  error_updating_password:
+    one: "Um erro impediu que a sua senha fosse atualizada:"
+    other: "%{count} erros impediram que a sua senha fosse atualizada:"
+  email: E-mail
+  new_password_explanation: Use este campo somente se você deseja mudar a sua senha
+  new_password_confirmation: Confirmação
+  new_password_confirmation_explanation: Confirmação de Nova Senha
+  current_password_explanation: Isso é necessário para proteger a sua conta
+  time_zone: Fuso Horário
+
+  # views/users/edit.html
+  account_details_title: Detalhes da Conta
+
+  # views/users/index.html
+  listing_users_title: Listagem de Usuários
+  account: Conta
+  password: Senha
+  user_show: Mostrar
+  user_edit: Editar
+  user_destroy: Destruir
+  user_destroy_confirm: Você tem certeza?
+  user_new: Novo Usuário
+
+  # views/users/new.html
+  sign_up_for_account_title: Cadastre-se para criar uma Conta
+
+  # Admin
+  insufficient_privileges: Você não tem permissão para ver essa página

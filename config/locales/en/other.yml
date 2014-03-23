@@ -1,0 +1,161 @@
+en:
+  will_paginate:
+    next: Next
+    previous: Previous
+
+  password_forgotten: Password forgotten?
+  didnt_receive_confirmation: "Didn't receive confirmation instructions?"
+  didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
+  resend_confirmation: Resend confirmation instructions
+  submit: Submit
+  change_password: Change password
+
+  # Generic
+  no_data: No data has been found
+
+  # controllers/informations_controller.rb
+  chart_date_format: %m/%d
+
+  # controllers/sessions_controller.rb
+  sign_in_success: You logged-in successfully to your account.
+  sign_in_failure: Authentication failed, check your credentials and the captcha answer
+  sign_out_success: You logged out successfully
+
+  # controllers/third_party_callbacks_controller.rb
+  lr_transfer_success: "Successfully added %{amount} %{currency} to your account (LR fees : %{fee} %{currency})"
+  lr_transfer_failure: Your %{amount} %{currency} transfer failed.
+  px_transfer_canceled: Your Pecunix transfer was canceled
+  px_transfer_success: You successfully transferred %{amount} PGAU to your account (Pecunix charged a %{fee} PGAU fee)
+
+  # controllers/trade_orders_controller.rb
+  order_saved: Your order has been saved but no matching orders have been found yet
+  order_filled: Your order was %{how} filled, you %{action} %{traded_btc} BTC for %{amount} %{currency} @ %{ppc} %{currency}/BTC
+  bought: bought
+  sold: sold
+  partially: partially
+  completely: completely
+  order_deleted: Trade order deleted successfully
+
+  # controllers/transfers_controller.rb
+  successful_transfer: You successfuly transferred %{amount} %{currency}
+
+  # controllers/user_controller.rb
+  account_created: Your account was successfully created
+  account_updated: Your account was successfully updated
+
+  # helpers/trade_orders_helper.rb
+  order_dark_pool_some: Some of these orders don't appear in the public order book
+  order_dark_pool: This order doesn't appear in the public order book
+
+  # helpers/transfers_helper.rb
+  confirmations_left:
+    one: 1 confirmation left
+    other: %{count} confirmations left
+
+  # mailers/backup_mailer.rb
+  support_from: Bitfication support <%{support_email}>
+  wallet_backup_subject: Wallet backup %{date}
+
+  # mailers/user_mailer.rb
+  sign_up_confirmation: Registration confirmation
+
+  # models/*.rb + lib/validators/*.rb
+  errors:
+    not_yourself: cannot be yourself
+
+    blank: can't be blank
+
+    must_be_greater: must be greater than %{min} BTC
+    greater_than_balance: is greater than your available balance (%{balance} %{currency})
+    greater_than_capacity: is greater than your buying capacity (%{capacity} BTC @ %{ppc} BTC/%{currency})
+    minimum_dark_pool_order: orders must have a 3,000 BTC minimal amount
+
+    invalid: is invalid
+    no_match: doesn't match its confirmation
+    answer_incorrect: answer is incorrect
+
+    not_your_address: can't be one of your addresses
+    min_amount: should not be smaller than %{minimum} %{currency}
+    ppc_minimum: Price per coin should not be smaller than 0.0001 %{currency}
+
+  # views/accounts/show.html
+  account_balance_title: Account
+  currency: Currency
+  balance: Balance
+  balance_unconfirmed: These funds are awaiting confirmation from the bitcoin network
+
+  # views/backup_mailer/wallet_backup.text
+  encrypted_wallet: Encrypted server wallet for %{date}
+
+  # views/informations/economy.html
+  economy_title: Bitcoin economy summarized
+  how_many_generated: How many bitcoins are there ?
+  generated_coins_html: Currently there has been a total of <strong>%{count}</strong> generated bitcoins.
+
+  # views/informations/faq.html
+  faq_title: Frequently asked questions
+
+  # views/informations/welcome.html
+
+  # views/layouts/_footer.html
+  footer_html: 'Feel free to support this project by donating a few BTC to <span class="bitcoin-address">%{adress}</span>'
+
+  # views/sessions/new.html
+  account_label: Account ID
+  account_description: E-mail address or account ID
+  password_label: Password
+  password_description: Password forgotten?
+  sign_in_submit: Sign-in
+
+  # views/trade_orders/book.html
+  order_book_title: Select a currency 
+  amount: Amount
+  price: Price
+  no_buying_orders_found: No buying orders have been found.
+  no_selling_orders_found: No selling orders have been found.
+
+  # views/trades/index.html
+  trade_history_title: Trade history
+  no_trades_found: No trades were found  
+
+  # views/transfers/index.html
+  account_history_title: Account history
+  currency: Currency
+
+  # views/user_mailer/registration_confirmation.html
+  # views/user_mailer/registration_confirmation.text
+  thanks_for_registering: Thank you for registering at Bitfication.
+  your_account_id_is: "Your account ID is : %{account_id}"
+
+  # views/users/_form.html
+  error_updating_account:
+    one: "An error prevented your account details from being updated :"
+    other: "%{count} errors prevented your account details from being updated :"
+  error_updating_password:
+    one: "An error prevented your password from being updated :"
+    other: "%{count} errors prevented your password from being updated :"
+  email: Email
+  new_password_explanation: Use this field only if you want to change your password
+  new_password_confirmation: Confirmation
+  new_password_confirmation_explanation: New password confirmation
+  current_password_explanation: This is required to protect your account
+  time_zone: Time zone
+
+  # views/users/edit.html
+  account_details_title: Account details
+
+  # views/users/index.html
+  listing_users_title: Listing users
+  account: Account
+  password: Password
+  user_show: Show
+  user_edit: Edit
+  user_destroy: Destroy
+  user_destroy_confirm: Are you sure?
+  user_new: New User
+
+  # views/users/new.html
+  sign_up_for_account_title: Sign-up for an account
+
+  # Admin
+  insufficient_privileges: Insufficient privileges to view this page

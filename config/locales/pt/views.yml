@@ -1,0 +1,337 @@
+pt:
+  layouts:
+    application:
+      title: "Bitfication: Compre Bitcoins de forma fácil e segura!"
+      description: Compre, venda e guarde os seus Bitcoins de forma fácil e segura com a melhor plataforma livre do mercado
+      ticker:
+        last_price: Último Preço
+        high: Alta
+        low: Baixa
+        volume: Volume
+        wavg: Média
+    user_informations:
+      balance: Sua Carteira
+      signed_in_as: Conectado como
+      address_tip: Um novo Endereço Bitcoin é criado automaticamente sempre que você receber um depósito, o seu Endereço Bitcoin anterior continuará funcionando na sua conta
+      your_address: Seu Endereço Bitcoin
+      logout: Sair
+      sign_up: Cadastro
+      sign_in: Entrar
+    ticker:
+      last_price: Último Preço
+      high: Alta
+      low: Baixa
+      volume: Volume
+      wavg: Média
+    navigation:
+      account:
+        main: Conta
+        balance: Saldo
+        history: Histórico
+        withdraw: Retirada
+        deposit: Depósito
+      trading:
+        main: Negociações
+        your_orders: Ordens
+        order_book: Order Book
+        trade_history: Histórico
+      admin:
+        main: Admin
+        transfers: Transferências
+        users: Uuários
+        information: Informações
+        pending_transfers: Transferências pendentes
+      help:
+        main: Ajuda
+        faq: FAQ
+        economy: Economia
+        support_alltickets: Visualizar os Tickets
+        support_newticket: Abrir novo Ticket
+        fees: Nossas Taxas
+        api_docs: API
+        terms_of_service: Termos de Serviço
+      ecommerce:
+        main: E-commerce
+
+  invoices:
+    new:
+      create_invoice: Criar uma fatura
+      error: Errop ao criar a fatura
+      amount_explanation: O valor a ser pago por essa fatura
+      payment_explanation: O endereço para o qual os fundos devem ser enviados
+      callback_url_explanation: A URL que deve ser postada após o pagamento
+      submit: Enviar fatura
+      created: Fatura criada com sucesso
+      item_url_explanation: URL relacionada à ordem no site do comerciante
+    index:
+      details: Mostrar os detalhes da fatura
+      create: Criar fatura
+      deleted: Fatura removida com sucesso
+      confirm: Você tem certeza que deseja apagar esta fatura?
+      delete: Apagar esta fatura
+    show:
+      details: Detalhes da fatura
+      payee: Favorecido
+      payment-explanations: >
+        Para pagar esta fatura, simplesmente transfira o montante para
+        o endereço de pagamento, a página irá atualizar automaticamente
+        para te mostrar o andamento do processo.
+      return_to_item: Retornar ao site do comerciante
+
+  trade_orders:
+    index:
+      create: Criar uma ordem
+      active_orders: "Ordens ativas (%{count})"
+      inactive_orders: "Ordens inativas (%{count})"
+    detailed_list:
+      na: N/A
+      sell: Venda
+      buy: Compra
+      market: Mercado
+      limit: Limite
+      delete_order: Apagar esta order de negociação
+      delete_order_confirm: Você tem certeza que deseja apagar esta ordem de negociação ?
+      activate_order: Ativar esta ordem de negociação e a execute
+      activate_order_confirm: Você tem certeza que deseja ativar esta ordem de negociação ?
+    book:
+      bids: Compras
+      asks: Vendas
+    list:
+      price: Preço
+      amount: Montante
+      total: Total
+      market_order: Ordem de Mercado
+      bids: Compras
+      asks: Vendas
+    new:
+      title: Criar uma ordem de negociação
+      currency_explanation: Moeda que você deseja negociar
+      type_explanation: Tipos diferentes de combinação estão explicados na nossa página de ajuda
+      category: Categoria
+      buy: Comprar
+      sell: Vender
+      sell_or_buy_explanation: Se você quer comprar ou vender Bitcoins
+      your_balance: Seu saldo
+      your_balance_explanation: Seu saldo disponível já confirmado
+      amount_explanation: Montante em Bitcoins que você está negociando
+      ppc_explanation: Preço de 1 Bitcoin
+      total_explanation: O total da sua ordem
+      dark_pool_explanation: A ordem deve ficar escondida?
+      help: Visite a nossa página de ajuda se você precisa de assistência para negociar Bitcoins
+      error:
+        one: "1 erro impediu que a sua ordem de negociação seja criada :"
+        other: "%{count} erros impedindo que a sua ordem de negociação seja criada :"
+
+  trades:
+    index:
+      title: Histórico de Negociações
+
+  accounts:
+    show:
+      add_funds: Depositar Fundos
+    deposit:
+      not_available: Depósitos via transferência SEPA não estão dispoíveis no momento
+      bitcoins:
+        title: Bitcoins
+        address: Seu Endereço Bitcoin
+        conf_rqd: Confirmações necessárias
+        conf_rqd_unit: confirmações
+        conf_time: Tempo estimado para confirmação
+        conf_time_unit: minutos
+        add_info_html: "<p>Simplesmente transfira o <i>Dinheiro Virtual</i> para o seu <b>Endereço Bitcoin</b>, e valor aparecerá aqui após o tempo de confirmação. Você será capaz de utilizar os fundos após isso.</p><p>Após você realizar a transferência, você poderá observar o decorrer das confirmaçõe e o progresso da transação em <b><a href=%{tx_address}>blockchain.info</a></b> (<i>Comprovante de Pagamento Bitcoin</i>).</p>"
+      fast_deposit: Depósito Rápido
+      fast_deposit_notice_html: "<p>Para se beneficiar do <b>Depósito Rápido</b>, nos envie o comprovante do depósito aqui nesta página.<p>Faça o seu depósito em nossa conta informada aqui e envie uma foto do comprovante, nos formatos PNG, JPEG, GIF ou mesmo arquivos PDF.<p>Para nos enviar o comprovante, clique no botão <i>browse</i> abaixo, selecione o arquivo e clique em <i>Attach File</i>, pronto! O seu depósito será idenficado de forma muito mais rápida e segura.<p><b>NOTA:</b> caso o valor creditado em nossa conta seja diferente, o seu depósito será atualizado automaticamente.<br>"
+      fast_deposit_uploaded: "O seu comprovante foi enviado e o processo está na fila <b>Depósito Rápido</b>. A operação será processada dentro de 24 horas (dias úteis)."
+      deposit_eur_title: Depósito com transferência bancária
+      deposit_eur_body_html: "
+        <p>
+          Combramos uma taxa de 1% sobre o valor de cada depósito.
+          <ul>
+            <li>Faça o depósito no valor acima, de acordo com o seu pedido, na conta do Banco Itaú abaixo.
+            <li>Em posse do comprovante, envie o mesmo para o Bitfication, acessando novamente a página de depósito em sua conta e anexe o arquivo.
+          </ul>
+        </p>
+        "
+      bic: BIC
+      account_holder: Titular da Conta
+      iban: IBAN
+      bank: Banco
+      ag: 
+      cc: 
+      cnpj: CNPJ
+      cpf: CPF
+      comment: Comentário
+      account_holder_address: Endereço do Titular da Conta
+      other_options: Outras opções
+      add_bank_account: Adicionar conta bancária
+    lr_sci_form:
+      click_for_lr_html: <a href="#lr" onclick="%{action}">Clique aqui</a> para pagar com a sua conta do Liberty Reserve (LREUR and LRUSD).
+
+  deposits:
+    index:
+      details: Deposit details
+      successful:
+        processed: Your deposit for %{amount} %{currency} has been processed
+        pending: "<p>Your request was posted successfully. </p><p>Please now send %{amount} %{currency} to our bank account.</p><p>You can return any time to this page to view our bank details.</p><p>Once the funds arrive, they will be approved by our staff and credited to your account.</p>"
+        bank_details: Show bank details
+    show:
+      submit: Attach File
+    new:
+      title: Make a deposit
+      bitcoins:
+        title: Bitcoins
+        address: Seu Endereço Bitcoin
+        conf_rqd: Confirmações necessárias
+        conf_rqd_unit: confirmações
+        conf_time: Tempo estimado para confirmação
+        conf_time_unit: minutos
+        add_info_html: "<p>Simplesmente transfira o <i>Dinheiro Virtual</i> para o seu <b>Endereço Bitcoin</b>, e valor aparecerá aqui após o tempo de confirmação. Você será capaz de utilizar os fundos após isso.</p><p>Após você realizar a transferência, você poderá observar o decorrer das confirmaçõe e o progresso da transação em <b><a href=%{tx_address}>blockchain.info</a></b> (<i>Comprovante de Pagamento Bitcoin</i>).</p>"
+      deposit_eur_title: Depósito com transferência bancária
+      deposit_form: Por favor, preencha o formulário abaixo com os detalhes do seu depósito. Isto irá permitir que o nosso pessoal para processar o depósito tão rapidamente quanto possível. 
+      deposit_pendings: Pending Deposits
+      delete_deposit_confirm: Tem certeza você quer apagar este deposito?
+      bic: BIC
+      account_holder: Titular da Conta
+      iban: IBAN
+      bank: Banco
+      ag:
+      cc:
+      cnpj: CNPJ
+      cpf: CPF
+      submit: Deposit
+    update:
+      deposit_file_added: O arquivo foi adicionado ao seu depósito
+      error: Esse arquivo não pode ser transferida
+    destroy:
+      deposit_deleted: O seu pedido do deposito foi apogado
+
+  users:
+    form:
+      submit: Enviar
+      merchant_explanation: Ativar as ferramentas para comerciante
+      ga_otp_explanation: Google Auth. OTP requerido
+      ga_otp_config: Ajuda e instruções de configuração
+      additional_authentication_requirements: Requerimentos adicionais para autenticação
+      api_tools: API & Ferramentas
+      yk_otp_config: Vincular as chaves à sua conta
+      time_zone_explanation: Usado para exibir datas e horários localizados
+      manage_bank_accounts: Gerencie as suas contas bancárias
+      registered_bank_accounts:
+        zero: Você ainda não tem nenhuma conta bancária registrada.
+        one: Você registrou uma conta bancária
+        other: Você registrou %{count} contas bancárias
+      notifications: Notificações por e-mail
+      notify_on_trade_explanation: Receber uma notificação assim que alguma de suas ordens forem realizadas
+    ga_otp_configuration:
+      reset: O seu <i>shared-secret</i> do Autenticador do Google foi corretamente reiniciado, você deve atualizar as configurações do seu dispositivo móvel
+    password_change_form:
+      change_password: Mude a sua senha
+      submit: Enviar
+      password_updated: A sua senha foi atualizada com sucesso
+      
+
+  yubikeys:
+    index:
+      create: Vincular o Yubikey na sua conta
+      delete: Apagar este Yubikey
+      confirm: Você tem certeza?
+      associate: Vincluar um novo Yubikey
+      otp_explanation: Simplesmente crie um OTP aqui para associá-lo com a sua chave
+      created: Yubikey vinculado, você precisará dele na próxima vez que for entrar
+      destroyed: Yubikey apagada
+      error: Esta chave não pode ser associada com a sua conta
+
+  devise:
+    sessions:
+      new:
+        ga_otp_explanation: Necessário somente se você ativar o Autenticador do Google
+        yk_otp_explanation: Necessário somente se você ativar o Yubikey
+        password_explanation: Esqueceu sua senha?
+        sign_in: Entrar
+
+    unlocks:
+      new:
+        resend: Enviar instruções de desbloqueio
+  
+     
+
+  transfers:
+    index:
+      details: Detalhes da transação
+      successful:
+        processed: Você retirou com sucesso %{amount} %{currency}
+        pending: Seu pedido de retirada foi enviado e será processado em breve
+    show:
+      state:
+        processed: Processado
+        pending: Pendente
+        cancelled: Terminado 
+    new:
+      title: Retirada de Fundos
+      body_html: "
+       <p>Para sua conveniência, nós vamos pagar a sua taxa de transação (0.0005 BTC), para que você receba mais rapiramente os seus Bitcoins!</p>
+        <p>Você pode retirar utilizando os seguintes métodos:
+          <ul>
+            <li>Bitcoins,</li>
+            <li>Transferência Bancária</li>
+          </ul>
+           Por razões de segurança, todas as operações de retirada são processadas manualmente.
+        </p>
+        "
+      error: "Alguns erros estão impedindo a retirada dos seus fundos:"
+      max_amount: Quantidada máxima
+      submit: Transferir
+      manage_bank_accounts: Gerencie as suas contas bancárias
+      will_receive: Valor após as taxas
+      bank_account: Conta Bancária
+  bank_accounts:
+    index:
+      title: Adicionar uma conta bancária
+      submit: Enviar
+      created: Conta bancária registrada com sucesso
+      error: Sua conta bancária não pode ser registrada
+      destroyed: Conta bancária removida
+      not_destroyed: Você não pode apagar a conta bancária que foi previamente verificada ou utilizada para transferência
+    list:
+      delete: apagar
+      confirm: Você tem certeza que deseja apagar esta conta bancária?
+
+  static_pages:
+    show:
+      last_modification_at: "Esta página foi modificada pela última vez em %{updated_at}"
+
+  tickets:
+    new:
+      title: Abrir um pedido de suporte
+      submit: Enviar pedido
+      description_explanation: Poir favor, seja preciso ao descrever o seu pedido de ajuda e informe todos os detalhes relevantes.
+      error: Impossível enviar o seu pedido de suporte
+    index:
+      successfully_created: Seu pedido de suporte foi gravado com sucesso, ele será processado o mais rápido possível
+      your_tickets: Seus pedidos de suporte
+      no_tickets_found: Você não tem pedidos de suporte para visualizar
+    ticket:
+      add_comment: Fazer um comentário
+      someone_wrote: %{who} escreveu, %{when} atrás
+      you: Você
+      reopen : Reabrir o ticket
+      close: Fechar o ticket
+    
+  informations:
+    welcome:
+      download: Download do Bitcoin 0.8.6
+      source: Código Fonte
+      trading_data_title: Negociações da última semana
+      welcome: Bem vindos ao Bitfication!
+      chart_notrades: Não existem negociações 
+
+    support:
+      contact: Entre em contato
+      contact_description_html: "Você pode nos encontrar aqui <a href=\"mailto:%{email}\">%{email}</a>"
+      please_sign_in: Por favor, entre no sistema para criar um pedido de suporte
+      your_tickets:
+        zero: Você não tem nenhum pedido de suporte pendente.
+        one: Você tem um pedido de suporte pendente.
+        other: Você tem %{count} pedidos de suporte pendentes.
+      open_a_ticket: Abrir um novo ticket de suporte
+      view_tickets: Visualizar todos os pedidos

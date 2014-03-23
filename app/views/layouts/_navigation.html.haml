@@ -1,0 +1,37 @@
+%ul#menu
+  = menu_item ".account.main", nil, :logged_in => true do 
+    %ul
+      = menu_item ".account.balance", account_path
+      = menu_item ".account.history", account_transfers_path
+      = menu_item ".account.deposit", new_account_deposit_path
+      = menu_item ".account.withdraw", new_account_transfer_path
+
+  = menu_item ".trading.main", nil do
+    %ul
+      = menu_item ".trading.your_orders", account_trade_orders_path, :logged_in => true
+      = menu_item ".trading.trade_history", account_trades_path, :logged_in => true
+      = menu_item ".trading.order_book", order_book_path
+
+  = menu_item ".admin.main", nil, :manager => true do
+    %ul
+      = menu_item "activerecord.models.user.other", admin_users_path
+      = menu_item ".admin.pending_transfers", admin_pending_transfers_path
+      = menu_item ".admin.information", admin_balances_path
+      = menu_item "activerecord.models.announcement.other", admin_announcements_path
+      = menu_item "activerecord.models.static_page.other", admin_static_pages_path
+      = menu_item "activerecord.models.currency.other", admin_currencies_path, :admin => true
+      = menu_item "activerecord.models.ticket.other", admin_tickets_path
+
+
+  = menu_item ".ecommerce.main", nil, :merchant => true do
+    %ul
+      = menu_item "activerecord.models.invoice.other", invoices_path
+
+  = menu_item ".help.main", nil do
+    %ul
+      = menu_item ".help.support_newticket", new_user_ticket_path
+      = menu_item ".help.support_alltickets", user_tickets_path
+      = menu_item ".help.faq", static_path(:faq)
+      = menu_item ".help.terms_of_service", static_path(:terms_of_service), :logged_in => true
+      = menu_item ".help.fees", static_path(:fees)
+      = menu_item ".help.api_docs", static_path(:api_docs)

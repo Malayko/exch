@@ -1,0 +1,58 @@
+!!! XML
+!!! 
+
+%html{ :"xmlns:fb" => "http://www.facebook.com/2008/fbml", :"xmlns:og" => "http://ogp.me/ns#", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title= t(".title")
+
+    %meta{ :name => "description", :content => t(".description") }
+    %meta{ :"http-equiv" => "content-type", :content => "text/html;charset=UTF-8" }
+    %meta{ :"http-equiv" => "content-language", :content => I18n.locale }
+
+    = stylesheet_link_tag "application"
+
+    = javascript_include_tag "application"
+
+    = csrf_meta_tag
+
+    = render :partial => 'layouts/google_analytics'
+    = render :partial => 'layouts/open_graph'
+    = render :partial => 'layouts/icons'
+
+    %link{ :href => locale_switch_link(I18n.locale, request.url), :rel => "canonical" }
+
+    = yield :head
+
+  %body{ :class => [request[:controller], "#{request[:controller]}-#{request[:action]}"] }
+      
+    %div#userbar-wrapper
+      %div#userbar
+        %div.index 
+          = t(".ticker.last_price") + ": " + number_to_currency(@last_price, unit: "R$")
+        %div.index
+          = t(".ticker.high") + ": " + number_to_currency(@stats[:phigh], unit: "R$")
+        %div.index
+          = t(".ticker.low") + ": " + number_to_currency(@stats[:plow], unit: "R$")
+        %div.index
+          = t(".ticker.volume") + ": " + number_to_currency(@stats[:volume], unit: "BTC", precision: 5, format: "%n %u" )
+        %div.index
+          = t(".ticker.wavg") + ": " + number_to_currency(@stats[:pwavg], unit: "R$")
+
+    #spacer
+      #content{ :style => "clear:both" }
+  
+        %h1#main-title= link_to(content_tag(:span, t(".title")), root_path)
+  
+        = render :partial => 'layouts/locale_select'
+        = render :partial => 'layouts/user_informations'
+        = render :partial => 'layouts/navigation'
+        = render :partial => 'layouts/announcements'
+        = render :partial => 'layouts/flash', :object => flash
+  
+        #right-content
+          = yield
+  
+          / This is used to force the container to stretch
+          %div{ :style => "clear:both" }
+  
+      = render :partial => 'layouts/footer'

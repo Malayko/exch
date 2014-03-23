@@ -1,0 +1,27 @@
+#user-information
+  %p
+    - if current_user
+      %p.identification
+        = t(".signed_in_as")
+        = link_to @current_user.name, edit_user_path
+        = "-"
+        = link_to t(".logout"), destroy_session_path(:user)
+        %span#countdown{ :data => { "delay" => Devise.timeout_in.to_i, "logout-path" => destroy_user_session_path } }
+      %p
+        %strong
+          = t(".balance") + ":"
+        - #debugger
+        - @currencies.each_with_index do |c, index|
+          %strong
+            - if c.code!="BTC"
+              = image_tag("flags/#{c.flag}.png", :size=> "18x12")
+              = c.display
+            = number_to_currency(@current_user.balance(c.code), unit: c.code=="BTC"? "BTC" : "", precision: c.code=="BTC"? 8 : 3)
+            
+          = index!=(@currencies.length - 1)? " | " : ""
+      
+    - else
+      = link_to t(".sign_up"), new_registration_path(:user)
+      = "|"
+      = link_to t(".sign_in"), new_session_path(:user)
+

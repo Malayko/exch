@@ -1,0 +1,26 @@
+= creation_link :invoice, t(".create")
+
+%h1= t("activerecord.models.invoice.other")
+
+%table.default
+  %tr
+    %th= t("activerecord.attributes.invoice.reference")
+    %th= t("activerecord.attributes.invoice.state")
+    %th= t("activerecord.attributes.invoice.paid_at")
+    %th= t("activerecord.attributes.invoice.amount")
+    %th.auto-sized
+
+  - unless @invoices.blank?
+    - @invoices.each do |invoice|
+      %tr{ :class => cycle('even', 'odd') }
+        %td= invoice.reference
+        %td= invoice_state(invoice.state)
+        %td= !invoice.pending? ? l(invoice.paid_at) : "N/A"
+        %td.amount= number_to_bitcoins invoice.amount
+        %td.auto-sized
+          = invoice_delete(invoice)
+          = invoice_details(invoice)
+  - else
+    = render :partial => "layouts/no_data"
+
+= will_paginate(@invoices)

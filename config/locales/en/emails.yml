@@ -1,0 +1,35 @@
+en:
+  emails:
+    invoice_payment_notification:
+      subject: You have received a bitcoin payment
+      body: "You have received a %{amount} BTC payment (invoice reference : %{reference})"
+      
+    withdrawal_processed_notification:
+      subject: Your payment request has been processed
+      body: "Your payment request has been processed, you will receive the funds shortly."
+      
+    deposit_processed_notification:
+      subject: Your deposit has been processed
+      body: "We have credited your account successfully with your recent deposit. Please login again to check your account and start trading."
+
+    deposit_request_notification:
+      subject: Deposit request
+      body: "We received a request for a new deposit to your Bitfication account. Please deposit the amount below to our bank account."
+
+    tickets:
+      view_details_of: "View details of ticket \"%{title}\""
+      reopen_notification:
+        subject: Your support ticket has been reopened
+      create_notification:
+        subject: A new support ticket has been opened
+      close_notification:
+        subject: Your support ticket has been closed
+      comment_notification:
+        subject: Your support ticket has been commented
+    
+    trade_notification:
+      subject: Trade orders have been executed
+      traded: "%{traded_btc} BTC at %{ppc} %{currency} per BTC for a total of %{traded_currency} %{currency}"
+      bought: Bought
+      sold: Sold
+              

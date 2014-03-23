@@ -1,0 +1,11 @@
+development:
+  username: bitficbtcusr
+  password: PASSWORD
+  url: http://localhost:8332/
+  donations: 18nN5efnoyn8FqBLgNSJhVc6QUbSgM8yF5
+  
+production:
+  username: bitficbtcusr
+  password: PASSWORD
+  url: http://localhost:8332/
+  donations: 18nN5efnoyn8FqBLgNSJhVc6QUbSgM8yF5

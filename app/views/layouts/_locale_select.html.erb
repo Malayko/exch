@@ -1,0 +1,20 @@
+<div id="locale-select">
+  <%
+    #"http://#{request.host+request.fullpath} ..... #{request.path}" 
+  %>
+  <% 
+  
+    #I18n.available_locales.sort{ |a,b| a.to_s <=> b.to_s }.each do |locale| 
+  I18n.available_locales.each do |locale|
+  %>
+    <%= link_to(
+      image_tag("flags/#{locale}.png",
+        :title => I18n::Locales[locale],
+        :alt => I18n::Locales[locale],
+        :size => "16x11"
+      ),
+      locale_switch_link(locale, request.url)
+    )
+  %>
+  <% end %>
+</div>

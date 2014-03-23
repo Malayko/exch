@@ -1,0 +1,31 @@
+pt:
+  currencies:
+    all:
+      name: Todas as moedas
+    btc:
+      name: Bitcoin      
+      link: http://www.bitcoin.org/
+    eur:
+      name: Euro
+      link: http://www.ecb.int/
+    lrusd:
+      name: Dólar do Liberty Reserve
+      link: https://www.libertyreserve.com/?ref=U4552263
+    lreur:
+      name: Euro do Liberty Reserve
+      link: https://www.libertyreserve.com/?ref=U4552263
+    pgau:
+      name: Ouro Pecunix
+      link: http://www.pecunix.com/
+    cad:
+      name: Dólar Canadense
+      link: http://www.bankofcanada.ca/
+    inr:
+      name: Rupee Indiano
+      link: http://www.rbi.org.in/
+    usd:
+      name: Dólar Americano
+      link: http://www.federalreserve.gov/
+    brl:
+      name: Real Brasileiro
+      link: http://www.bb.com.br/

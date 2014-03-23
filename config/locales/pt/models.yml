@@ -1,0 +1,205 @@
+pt:
+  activerecord:
+    attributes:
+      invoice:
+        reference: Referencia
+        user: Favorecido
+        payment_address: Endereço de pagamento
+        amount: Montante
+        callback_url: URL para chamada de retorno (Callback)
+        state: Estado
+        paid_at: Pago a
+        merchant_reference: Re. do comerciante
+        merchant_memo: Comentário
+        authentication_token: Token de Autenticação
+        item_url: Related order URL
+      liberty_reserve_transfer:
+        lr_account_id: ID da conta no Liberty Reserve
+      trade_order:
+        amount: Montante
+        dark_pool: Dark pool
+        ppc: Preço
+        category: Tipo
+        type: Tipo da Ordem
+        currency: Moeda
+        total: Total
+        created_at: Criado em
+        updated_at: Atualizado em
+      transfer:
+        id: ID
+        created_at: Criado em
+        user: Usuário
+        amount: Valor
+        amount_tosend: Valor do depósito
+        amount_afterfee: Valor a ser creditado
+        fast_deposit: Depósito Rápido
+        address: Endereço
+        currency: Moeda
+        bt_tx_confirmations: Confirmações
+        bt_tx_from: Endereço Bitcoin do remetente
+        bt_tx_id: Transação Bitcoin
+        email: Endereço de E-mail
+        lr_merchant_fee: Taxa do Comercia no Liberty Reserve
+        lr_transferred_amount: Montante transferido no Liberty Reserve
+        lr_transaction_id: Ref do Liberty Reserve
+        lr_account_id: Conta do Liberty Reserve
+        px_tx_id: Ref. do Pecunix
+        px_fee: taxa do Pecunix
+        px_payer: Pecunix payer
+        state: Estado
+      user:
+        id: ID
+        email: Endereço de E-mail
+        password: Senha
+        recaptcha_response_field: Você é um ser humano?
+        name: ID da Conta
+        admin: Administrador
+        authentication_token: Token de Autenticação
+        confirmation_sent_at: E-mail de confirmação enviado em
+        confirmation_token: Token de Confirmação
+        current_sign_in_at: Início da sessão atual em
+        current_sign_in_ip: Endereço IP da sessão atual
+        encrypted_password: Senha cifrada
+        failed_attempts: Tentativas falhas de autenticação
+        last_address: Último Endereço Bitcoin
+        last_sign_in_at: Último acesso em
+        last_sign_in_ip: Endereço IP da última sessão
+        locked_at: Bloqueado em
+        password_salt: Salto da senha
+        remember_created_at: Memorizar data de criação
+        remeber_token: Memorizar o token
+        reset_password_token: Token para reiniciar a senha
+        salt: Salto
+        secret_token: Token secreto
+        time_zone: Fuso-Horário
+        unlock_token: token desbloqueado
+        purchase_trades: Purchase trades
+        sale_trades: Sale trades
+        trade_orders: Ordens de Troca
+        transfers: Transferências
+        current_password: Senha atual
+        new_password: Nova senha
+        merchant: API do Comerciante
+        require_ga_otp: Autenticador do Google
+        require_yk_otp: Yubikey
+        ga_otp: Autenticador OTP do Google
+        yk_otp: Yubikey OTP
+        bank_account_id: Conta Bancária
+        full_name: Seu nome
+        address: Seu endereço
+        notify_on_trade: Troca concluída
+      trade:
+        type: Tipo
+        amount: Montante
+        price: Preço
+        total: Total
+        created_at: Data
+      announcement:
+        content: Menssagem
+        active: Ativo
+      yubikey:
+        otp: Yubikey OTP
+        key_id: Chave ID
+        active: Ativo
+        created_at: Criado em
+      static_page:
+        title: Título
+        locale: Localidade
+        contents: Conteúdo
+        created_at: Criado em
+        updated_at: Última atualização em
+      bank_account:
+        bic: BIC
+        iban: IBAN
+        bank_name: Nome do Banco
+        account_holder: Nome completo
+        ag: AG
+        cc: CC
+        cnpj: CPF/CNPJ
+        cpf: CPF
+        created_at: Registrato em
+        state: Estado
+      currency:
+        code: Código
+        created_at: Criação
+        updated_at: Atualização
+      ticket:
+        id: ID
+        title: Título
+        state: Estado
+        description: Descrição
+        created_at: Aberto em
+        updated_at: Atualizado em
+                    
+    models:
+      invoice:
+        one: Fatura
+        other: Faturas
+      user:
+        one: Usuário
+        other: Usuários
+      trade_order:
+        one: Trade order
+        other: Trade orders
+      account_operation:
+        one: Operação
+        other: Operações
+      transfer:
+        one: Transferência
+        other: Transferências
+      trade:
+        one: Troca
+        other: Trocas
+      announcement:
+        one: Anúncio
+        other: Anúncios
+      yubikey:
+        one: Yubikey
+        other: Yubikeys
+      static_page:
+        one: Página estática
+        other: Páginas estáticas
+      bank_account:
+        one: Conta Bancária
+        other: Contas Bancárias
+      ticket:
+        one: Ticket de Suporte
+        other: Tickets de Suporte
+      currency:
+        one: Moeda
+        other: Moedas
+        
+    extra:
+      invoice:
+        state_translations:
+          pending: Pagamento pendente
+          processing: Processando pagamento
+          paid: Pago
+        state_tooltips:
+          pending: Nenhum pagamento foi recebido
+          processing: O pagamento foi detectado e aguarda a confirmação na rede Bitcoin
+          paid: O pagamento foi confirmado
+      trade:
+        types:
+          buy: Comprar
+          sell: Vender
+      bank_account:
+        states:
+          unverified: Não verificada
+          verified: Verificada
+      currency:
+        codes:
+          eur: Euro
+          usd: Dólar Americano
+          cad: Dólar Canadense
+          inr: Rupee Indiano
+          lrusd: Dólar do Liberty Reserve
+          lreur: Euro do Liberty Reserve
+          pgau: Ouro do Pecunix
+          btc: Bitcoin   
+          brl: Real Brasileiro
+      ticket:
+        states:
+          pending: Pendente
+          solved: Resolvido
+          closed: Fechado

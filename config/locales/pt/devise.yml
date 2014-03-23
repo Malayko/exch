@@ -1,0 +1,61 @@
+pt:
+  errors:
+    messages:
+      already_confirmed: "já foi confirmado, por favor, tente entrar"
+      confirmation_period_expired: "precisa ser confirmado dentro de %{period}, favor realizar novo pedido"
+      expired: "já expirou, favor realizar novo pedido"
+      not_found: "não encontrado"
+      not_locked: "não foi bloqueado"
+      not_saved:
+        one: "1 erro proibiu que o %{resource} fosse gravado:"
+        other: "%{count} erros proibiram que o %{resource} fosse gravado:"
+
+  devise:
+    failure:
+      unauthenticated: 'Você precisa estar conectado para acessar essa página'
+      unconfirmed: 'Você precisa confirmar a sua conta antes de continuar'
+      locked: 'Sua conta está bloqueada'
+      invalid: 'Senha ou email inválido'
+      invalid_token: 'Token de autenticação inválido'
+      timeout: 'Sua sessão expirou, por favor, entre novamente para continuar'
+      inactive: 'Sua conta ainda não foi ativada'
+      invalid_ga_otp: 'Autenticador OTP do Google inválido ou expirado'
+      invalid_yk_otp: 'Yubikey OTP inválido'
+      already_authenticated: 'Você já está conectado.'
+      not_found_in_database: 'Email ou senha inválidos.'
+    sessions:
+      signed_in: 'Entrou com sucesso'
+      signed_out: 'Saiu com sucesso'
+    passwords:
+      send_instructions: 'Você receberá um email com instruções sobre como reiniciar a sua senha dentro de alguns minutos'
+      updated: 'A sua senha foi modificada com sucesso. Você pode entrar agora'
+      no_token: "Você não pode acessar esta página ser ter vindo do e-mail de recuperação de senha. Se você chegou aqui vindo do e-mail, por favor, verifique a URL (endereço) fornecido."
+      send_paranoid_instructions: "Se o seu e-mail existe em nosso banco de dados, você receberá um link para recuperar a sua senha no seu email em poucos minutos."
+      updated_not_active: "A sua senha foi modificada com sucesso."
+    confirmations:
+      send_instructions: 'Você receberá um email com instruções sobre como confirmar a sua conta dentro de alguns minutos'
+      confirmed: 'A sua conta foi confirmada com sucesso. Bem Vindo ao Bitfication!'
+      send_paranoid_instructions: 'Se o seu e-mail existe em nosso banco de dados, você receberá um e-mail com instruções sobre como confirmar a sua conta em poucos minutos.'
+    registrations:
+      signed_up: 'Você se registrou com sucesso. Instruções para confirmar a sua Conta foram enviadas para você por e-mail.'
+      updated: 'Você atualizou a sua conta com sucesso'
+      destroyed: 'Até mais! A sua conta foi cancelada com sucesso. Esperamos te ver novamente em breve'
+      signed_up_but_inactive: 'Você se cadastrou com sucesso. No entanto, você não pode entrar porque a sua conta ainda não está ativada.'
+      signed_up_but_locked: 'Você se cadastrou com sucesso. No entanto, você não pode entrar porque a sua conta está bloqueada.'
+      signed_up_but_unconfirmed: 'Uma mensagems com um link para a confirmação foi enviada para o seu e-mail. Por favor, abra o link para ativar a sua conta.'
+      update_needs_confirmation: 'Você atualizou a sua conta com sucesso, mas, nós precisamos verificar o seu endereço de e-mail. Por favor, verifique o seu e-mail e clique no link de confirmação para concluir o cadastro do seu novo endereço de e-mail.'
+      updated: 'Você atualizou a sua conta com sucesso.'
+    unlocks:
+      send_instructions: 'Você receberá um email com instruç~oes sobre como desbloquear a sua conta dentro de alguns minutos'
+      unlocked: 'A sua conta foi desbloqueada com sucesso. Você entrou'
+      send_paranoid_instructions: 'Se a sua conta existe, você receberá um e-mail com instruções sobre como desbloquear a sua conta em poucos minutos.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instruções de confirmação'
+      reset_password_instructions:
+        subject: 'Instruções para reiniciar a senha'
+      unlock_instructions:
+        subject: 'Instruções de desbloqueio'
+    omniauth_callbacks:
+      failure: 'Não foi possível autenticar você de %{kind} porque \"%{reason}\".'
+      success: 'A Autenticação foi bem sucessidade da sua conta %{kind}'

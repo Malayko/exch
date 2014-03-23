@@ -1,0 +1,19 @@
+%h1 Total balances
+
+%p
+  Third-party balance shows amounts held in external applications or APIs (eg. bitcoind)
+
+%table.default
+  %tr
+    %th Currency
+    %th User total balance
+    %th Third-party balance
+    %th Delta
+  - @balance_currencies.each do |currency|
+    %tr{ :class => cycle('even', 'odd') }
+      %td= currency.to_s.upcase
+      %td.amount= number_with_delimiter(@balances[currency][:user].to_f.round(2))
+      %td.amount= number_with_delimiter(@balances[currency][:reported].to_f.round(2))
+      %td.amount= number_with_delimiter(@balances[currency][:delta].to_f.round(2))
+
+

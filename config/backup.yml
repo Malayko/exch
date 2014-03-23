@@ -1,0 +1,10 @@
+recipient: backup@bitfication.com
+ftp_servers:
+  server1:
+    host: ftp.domain.tld
+    username: user
+    password: pass
+  server2:
+    host: ftp2.domain.tld
+    username: user
+    password: pass

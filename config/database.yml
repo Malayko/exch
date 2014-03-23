@@ -1,0 +1,20 @@
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: bitficproddb
+  username: bitficprodusr
+  password: bitficpass
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: bitficdevdb
+  username: bitficdevusr
+  password: bitficpass
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: bitfictestdb
+  username: bitfictstusr
+  password: bitficpass

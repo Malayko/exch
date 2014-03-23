@@ -1,0 +1,90 @@
+%h1= t(".bitcoins.title")
+
+%div{:style => "float:left; width: 50%" }
+  %div{:style => "line-height: 30pt;" }
+    %p
+      %strong= t(".bitcoins.address") + ":"
+      = link_to @current_user.bitcoin_address, "bitcoin:#{@current_user.bitcoin_address}"
+    %p
+      %strong= t(".bitcoins.conf_rqd") + ":"
+      = Transfer::MIN_BTC_CONFIRMATIONS
+      = t(".bitcoins.conf_rqd_unit")
+    %p
+      %strong= t(".bitcoins.conf_time") + ":"
+      = Transfer::MIN_BTC_CONFIRMATIONS * 10
+      = t(".bitcoins.conf_time_unit")
+  %p
+    = t(".bitcoins.add_info_html", :tx_address => "http://blockchain.info/address/#{@current_user.bitcoin_address}")
+
+%div{:style => "float:left" }
+  = image_tag(qrcode_image_path(current_user.bitcoin_address), :size => "120x120")
+%div{:style => "clear:both;" }
+%h1= t(".deposit_eur_title")
+%p= t(".deposit_eur_body_html")
+
+%div#bank-info
+  - if (@bic && @iban && @account_holder)
+    %table
+      %tr
+        %th= t(".comment")
+        %td= current_user.name
+      %tr
+        %th= t(".account_holder")
+        %td.account-holder= @account_holder
+      %tr
+        %th
+        %td.account-holder-address= @account_holder_address
+      
+      %tr
+        %td{ :colspan => 2 } &nbsp;
+        
+      %tr
+        %th= t(".ag")
+        %td= @ag
+      %tr
+        %th= t(".cc")
+        %td= @cc
+      %tr
+        %th= t(".cnpj")
+        %td= @cnpj
+      %tr
+        %th= t(".bank")
+        %td.bank= @bank
+      %tr
+        %th
+        %td.bank-address= @bank_address
+      -#    %tr
+-#      %th= t(".bic")
+-#      %td= @bic
+-#    %tr
+-#      %th= t(".iban")
+-#      %td= @iban
+
+  - else
+    %p#unavailable= t(".not_available")
+
+-# %h1= t(".other_options")
+
+-# %h2 Deposit CAD
+-# %p= link_to "View instructions", "/s/cad_operations"
+
+-# %h2 Deposit INR
+-# %p= link_to "View instructions", "/s/inr_operations"
+
+-# %h2= t(".deposit_lr_title")
+-# %p= render(:partial => 'lr_sci_form')
+
+-# %h2= t(".deposit_pgau_title")
+-# %p= t(".deposit_pgau_body_html")
+
+%br
+
+-# = form_tag pecunix_deposit_form_account_path, :method => :get, :remote => true do
+-#   .form-field
+-#     = label_tag :amount, t(".pgau_amount")
+-#     = text_field_tag :amount, nil
+
+-#   .form-field
+-#     = submit_tag t(".deposit_pgau"), :class => "submit"
+  
+-# #pecunix-sci-form-container.hidden

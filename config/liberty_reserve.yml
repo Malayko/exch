@@ -1,0 +1,19 @@
+development:
+  account: U4552263
+  store: Bitfication
+  success_url: http://85.171.177.102:3000/liberty_reserve_transfers
+  status_url: http://85.171.177.102:3000/liberty_reserve_transfers
+  fail_url: http://85.171.177.102:3000/liberty_reserve_transfers/fail
+  api_uri: https://api.libertyreserve.com/
+  api_name: Bitfication API
+  secret_word: MySecWord123
+
+production:
+  account: U4552263
+  store: Bitfication
+  success_url: http://85.171.177.102:3000/liberty_reserve_transfers
+  status_url: http://85.171.177.102:3000/liberty_reserve_transfers
+  fail_url: http://85.171.177.102:3000/liberty_reserve_transfers/fail
+  api_uri: https://api.libertyreserve.com/
+  api_name: Bitfication API
+  secret_word: MySecWord123

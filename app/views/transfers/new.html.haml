@@ -1,0 +1,67 @@
+%h1= t(".title")
+= t(".body_html")
+
+%br
+
+= form_for @transfer, :as => :transfer, :url => account_transfers_path do |f|
+  = errors_for(@transfer, :translated_message => t(".error"), :include_nested => :bank_account)
+  
+  -# custom script to update 'will receive' & 'amount' boxes
+  %script
+    $(document).ready(function(e) {
+    
+    $('#transfer_amount').change(function() {
+    
+    var txtAmtval = $(this).val();
+    
+    $('#will_receive').val(txtAmtval * (1-#{@withdrawal_rate}));
+        
+    });
+    
+    $('#will_receive').change(function() {
+    
+    var txtAmtval = $(this).val();
+    
+    $('#transfer_amount').val(txtAmtval * (1+#{@withdrawal_rate}));
+        
+    });
+    
+    });
+    
+  .form-field
+    = f.label :currency
+    = f.select :currency, options_from_collection_for_select(@currencies, 'code', I18n.locale, @transfer.currency)
+    - 
+  - if @transfer.currency == "BTC"
+    .form-field
+      = f.label :address
+      = f.text_field :address
+
+
+  -#- if ["LRlUSD", "kLREUR"].include? @transfer.currency
+  -#   .form-field
+  -#     = f.label :lr_account_id
+  -#     = f.text_field :lr_account_id
+
+  - if ["BRL"].include? @transfer.currency
+    - if @bank_accounts.blank? && @transfer.bank_account_id.blank?
+      = f.fields_for :bank_account do |bank_account|
+        = render :partial => 'bank_accounts/fieldsbr', :locals => { :form_builder => bank_account }
+    - else
+      .form-field
+        = label_tag :bank_account_id, t(".bank_account")
+        = f.select :bank_account_id, @bank_accounts, {}, { :prompt => "--" }
+        .explanation= link_to t(".manage_bank_accounts"), user_bank_accounts_path
+        
+  .form-field
+    = f.label :amount
+    = f.text_field :amount, :value => (["BRL"].include? @transfer.currency)? '%.2f' % current_user.max_withdraw_for(@transfer.currency) : "100", :autocomplete => "off"
+
+  - if ["BRL"].include? @transfer.currency
+  
+    .form-field
+      = label_tag :will_receive, t(".will_receive")
+      = text_field_tag :will_receive, '%.2f' % (current_user.max_withdraw_for(@transfer.currency)*(1-@withdrawal_rate))
+    
+  .form-field
+    = f.submit :value => t(".submit"), :class => "submit"

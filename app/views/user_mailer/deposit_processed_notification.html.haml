@@ -1,0 +1,6 @@
+%p= t("emails.deposit_processed_notification.body")
+
+%table
+  %tr
+    %th= "#{t("activerecord.attributes.transfer.amount_afterfee")} : "
+    %td= "#{@deposit.deposit_after_fee} #{@deposit.currency}"

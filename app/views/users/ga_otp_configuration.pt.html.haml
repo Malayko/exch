@@ -1,0 +1,55 @@
+%h1 Passos necessários para autenticação TOTP
+%h2 Por que utilizar autenticação <i>one-time-password</i>?
+%p
+  A autenticação TOTP adiciona uma camada de segurança no topo do mecanismo de autenticação
+  por usuário/senha. Para a sua conta se tornar comprometida, o criminoso precisa não só
+  saber a sua senha, como também, saber a sua <i>shared-secret</i> ou conseguir o seu celular.
+%p
+  Se você ativar a opção "Requerer TOTP" nas configurações de sua Conta, você não conseguirá
+  entrar sem prover o token TOTP. Você pode utilizar o mesmo token várias vezes, mas, o token
+  dura pouco tempo (30 segundos). Você precisará de um aparelho Android, iPhone ou Blackberry
+  para a criação do token.
+
+%h2 Reiniciar o seu <i>shared-secret</i>
+%p
+  Se você acredita que o seu celular foi comprometido ou se você pensa que alguém copiou a sua
+  <i>shared-secret</i>, você <strong>precisa</strong> reiniciá-lo.
+%p
+  Você precisa atualizar as configurações do seu celular.
+%br
+%p
+  = form_tag reset_ga_otp_secret_user_path, :method => :post do
+    = submit_tag "Reset shared-secret", :class => "submit"
+
+%h2 Configuração
+%p
+  %ul
+    %li Instale o App #{link_to "Autenticador do Google", "http://www.google.com/support/accounts/bin/answer.py?hl=en&answer=1066447", :target => "_blank"} no seu celular
+    %li
+      Configure a <i>shared-secret</i>, com:
+      %ul
+        %li manualmente, ou
+        %li automaticamente utilizando um scanner para ler o código QR abaixo.
+
+%h3 Configuração automática
+
+%p Leia o código QR com o scanner para configurar o seu celular automaticamente.
+
+= qrcode_image_tag current_user.ga_provisioning_uri
+
+%h3 Configuração manual
+
+%p Use os seguintes parâmetros para configurar o seu celular
+%br
+%table.default.details
+  %tr
+    %th Conta
+    %td= current_user.name
+  %tr
+    %th Tipo do Token
+    %td Time-based
+  %tr
+    %th Shared secret
+    %td.fixed= current_user.ga_otp_secret
+
+

@@ -1,0 +1,37 @@
+%p= t("emails.withdrawal_processed_notification.body")
+
+- if @withdrawal.type == "BitcoinTransfer"
+  %table
+    %tr
+      %th= "#{t("activerecord.attributes.transfer.bt_tx_id")} : " 
+      %td= @withdrawal.bt_tx_id
+    %tr
+      %th= "#{t("activerecord.attributes.transfer.address")} : " 
+      %td= @withdrawal.address
+    %tr
+      %th= "#{t("activerecord.attributes.transfer.amount")} : " 
+      %td= @withdrawal.amount.to_f.abs
+- else
+  %table
+    %tr
+      %th= "#{t("activerecord.attributes.bank_account.account_holder")} : " 
+      %td= @withdrawal.bank_account.account_holder
+    %tr
+      %th= "#{t("activerecord.attributes.bank_account.ag")} : " 
+      %td= @withdrawal.bank_account.ag
+    %tr
+      %th= "#{t("activerecord.attributes.bank_account.cc")} : " 
+      %td= @withdrawal.bank_account.cc
+    %tr
+      %th= "#{t("activerecord.attributes.bank_account.cnpj")} : " 
+      %td= @withdrawal.bank_account.cnpj
+    %tr
+      %th= "#{t("activerecord.attributes.transfer.amount")} : " 
+      %td= @withdrawal.amount.to_f.abs
+-#%table
+-#  %tr
+-#   %th= "#{t("activerecord.models.bank_account.one")} : "  
+-#   %td= @withdrawal.bank_account.iban
+-#  %tr
+-#    %th= "#{t("activerecord.attributes.transfer.amount")} : "   
+-#    %td= "#{@withdrawal.amount} #{@withdrawal.currency}"
